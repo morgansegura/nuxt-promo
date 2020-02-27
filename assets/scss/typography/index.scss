@@ -1,0 +1,76 @@
+// Fonts
+@import './fonts';
+
+// xxs: 12px, xs: 13px, sm: 14px, md: 24px, lg: 32px, xl: 40px, xxl: 48px
+$sizes: (
+  'xxs': 0.75rem,
+  'xs': 0.8125rem,
+  'sm': 0.875rem,
+  'md': 1.5rem,
+  'lg': 2rem,
+  'xl': 2.5rem,
+  'xxl': 3rem,
+);
+@each $name, $size in $sizes {
+  .fs-#{$name} {
+    font-size: $size;
+  }
+}
+// Font Weight
+$weights: (
+  '4': 400,
+  '6': 600,
+  '7': 700,
+  '9': 900,
+  'bold': bold,
+  'normal': normal,
+);
+@each $number, $weight in $weights {
+  .fw-#{$number} {
+    font-weight: $weight;
+  }
+}
+// Line Height
+$lineHeight: (
+  'xxs': 1,
+  'xs': 1.2,
+  'sm': 1.4,
+  'md': 1.7,
+  'lg': 2,
+  'xl': 2.5,
+  'xxl': 3,
+);
+
+@each $name, $height in $lineHeight {
+  .lh-#{$name} {
+    line-height: $height;
+  }
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+.sans {
+  font-family: $sans;
+}
+.serif {
+  font-family: $serif;
+}
+.mono {
+  font-family: $mono;
+}
+
+.t {
+  &-center {
+    text-align: center;
+  }
+  &-left {
+    text-align: left;
+  }
+  &-right {
+    text-align: right;
+  }
+}

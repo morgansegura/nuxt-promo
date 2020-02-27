@@ -1,0 +1,69 @@
+/** 
+[Color Diff]
+Description: color-diff function returns a map of operations to apply to the first color ($a) to obtain the second color ($b)
+ */
+
+@function color-diff($a, $b) {
+    $sat: saturation($a) - saturation($b);
+    $lig: lightness($a) - lightness($b);
+    $fn-sat: if($sat > 0, 'desaturate', 'saturate');
+    $fn-lig: if($lig > 0, 'darken', 'lighten');
+    @return ( adjust-hue: - ( hue($a) - hue($b), ), #{$fn-sat}: abs($sat), #{$fn-lig}: abs($lig));
+}
+
+
+/**
+[Palette Diff]
+Description: runs color-diff on every color of the base palette ($base-palette), and return a list of these diffs 
+ */
+
+@function palette-diff($palette) {
+    $base: map-get($palette, 'base');
+    $colors: map-get($palette, 'colors');
+    $diffs: ();
+    @each $color in $colors {
+        $diffs: append($diffs, color-diff($base, $color));
+    }
+    @return $diffs;
+}
+
+
+/**
+[Apply Diff]
+ */
+
+@function apply-diff($color, $diff) {
+    @each $function,
+    $value in $diff {
+        $color: call($function, $color, $value);
+    }
+    @return $color;
+}
+
+
+/**
+[Create Palette]
+ */
+
+@function create-palette($base-color) {
+    $palette: ();
+    @each $diff in $palette-diff {
+        $palette: append($palette, apply-diff($base-color, $diff));
+    }
+    @return $palette;
+}
+
+
+/**
+[Palette]
+ */
+
+@function palette($base-color) {
+    $colors: create-palette($base-color);
+    $keys: 'lightest' 'lighter' 'light' 'base' 'dark' 'darker' 'darkest';
+    $palette: ();
+    @for $i from 1 through min(length($colors), length($keys)) {
+        $palette: map-merge( $palette, ( nth($keys, $i): nth($colors, $i), ));
+    }
+    @return $palette;
+}

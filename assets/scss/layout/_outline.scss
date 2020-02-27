@@ -1,0 +1,35 @@
+/** Outline */
+
+@for $i from 0 through 10 {
+  .outline {
+    border-style: solid;
+    &-none {
+      border: none;
+    }
+  }
+  .ow {
+    &-#{$i} {
+      border-width: #{$i}px;
+    }
+    &t-#{$i} {
+      border-top-width: #{$i}px;
+    }
+    &r-#{$i} {
+      border-right-width: #{$i}px;
+    }
+    &b-#{$i} {
+      border-bottom-width: #{$i}px;
+    }
+    &l-#{$i} {
+      border-top-width: #{$i}px;
+    }
+    &x-#{$i} {
+      border-right-width: #{$i}px;
+      border-left-width: #{$i}px;
+    }
+    &y-#{$i} {
+      border-top-width: #{$i}px;
+      border-bottom-width: #{$i}px;
+    }
+  }
+}

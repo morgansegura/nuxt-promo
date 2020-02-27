@@ -1,0 +1,66 @@
+/** primary */
+
+$colors: (
+  50: 45%,
+  100: 40%,
+  200: 35%,
+  300: 30%,
+  400: 20%,
+  500: 10%,
+  600: 15%,
+  700: 20%,
+  800: 25%,
+  900: 30%,
+);
+
+/** Loop Color */
+
+.bg-primary {
+  background-color: $primary;
+  color: white;
+}
+
+.t-primary {
+  color: $primary;
+}
+
+.outline-primary {
+  border-color: $primary;
+}
+
+.fill-primary {
+  fill: $primary;
+}
+
+@each $name, $color in $colors {
+  .bg-primary-#{$name} {
+    @if $name<=500 {
+      background-color: lighten($primary, $color);
+      color: rgba(black, 0.87%);
+    } @else {
+      background-color: darken($primary, $color);
+      color: white;
+    }
+  }
+  .t-primary-#{$name} {
+    @if $name<=500 {
+      color: lighten($primary, $color);
+    } @else {
+      color: darken($primary, $color);
+    }
+  }
+  .outline-primary-#{$name} {
+    @if $name<=500 {
+      border-color: lighten($primary, $color);
+    } @else {
+      border-color: darken($primary, $color);
+    }
+  }
+  .fill-primary-#{$name} {
+    @if $name<=500 {
+      fill: lighten($primary, $color);
+    } @else {
+      fill: darken($primary, $color);
+    }
+  }
+}

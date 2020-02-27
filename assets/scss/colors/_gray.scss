@@ -1,0 +1,68 @@
+/** gray */
+
+// You can change the hue of gray
+$gray: #607d8b;
+$colors: (
+  50: 45%,
+  100: 40%,
+  200: 35%,
+  300: 30%,
+  400: 20%,
+  500: 10%,
+  600: 15%,
+  700: 20%,
+  800: 25%,
+  900: 30%,
+);
+
+/** Loop Color */
+
+.bg-gray {
+  background-color: $gray;
+  color: white;
+}
+
+.t-gray {
+  color: $gray;
+}
+
+.outline-gray {
+  border-color: $gray;
+}
+
+.fill-gray {
+  fill: $gray;
+}
+
+@each $name, $color in $colors {
+  .bg-gray-#{$name} {
+    @if $name<=500 {
+      background-color: lighten($gray, $color);
+      color: rgba(black, 0.87%);
+    } @else {
+      background-color: darken($gray, $color);
+      color: white;
+    }
+  }
+  .t-gray-#{$name} {
+    @if $name<=500 {
+      color: lighten($gray, $color);
+    } @else {
+      color: darken($gray, $color);
+    }
+  }
+  .outline-gray-#{$name} {
+    @if $name<=500 {
+      border-color: lighten($gray, $color);
+    } @else {
+      border-color: darken($gray, $color);
+    }
+  }
+  .fill-gray-#{$name} {
+    @if $name<=500 {
+      fill: lighten($gray, $color);
+    } @else {
+      fill: darken($gray, $color);
+    }
+  }
+}

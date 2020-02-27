@@ -1,0 +1,61 @@
+/** Padding */
+
+$sizes: ( '0': 0, 'xxs': 0.125rem, 'xs': 0.25rem, 'sm': 0.5rem, 'md': 1rem, 'lg': 2rem, 'xl': 4rem, 'xxl': 8rem, );
+
+/** Padding and Margin */
+
+@each $id,
+$size in $sizes {
+    .p-#{$id} {
+        padding-top: $size;
+        padding-right: $size;
+        padding-bottom: $size;
+        padding-left: $size;
+    }
+    .pt-#{$id} {
+        padding-top: $size;
+    }
+    .pr-#{$id} {
+        padding-right: $size;
+    }
+    .pb-#{$id} {
+        padding-bottom: $size;
+    }
+    .pl-#{$id} {
+        padding-left: $size;
+    }
+    .px-#{$id} {
+        padding-left: $size;
+        padding-right: $size;
+    }
+    .py-#{$id} {
+        padding-top: $size;
+        padding-bottom: $size;
+    }
+    .m-#{$id} {
+        margin-top: $size;
+        margin-right: $size;
+        margin-bottom: $size;
+        margin-left: $size;
+    }
+    .mt-#{$id} {
+        margin-top: $size;
+    }
+    .mr-#{$id} {
+        margin-right: $size;
+    }
+    .mb-#{$id} {
+        margin-bottom: $size;
+    }
+    .ml-#{$id} {
+        margin-left: $size;
+    }
+    .mx-#{$id} {
+        margin-left: $size;
+        margin-right: $size;
+    }
+    .my-#{$id} {
+        margin-top: $size;
+        margin-bottom: $size;
+    }
+}

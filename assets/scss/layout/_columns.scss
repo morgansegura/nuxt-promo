@@ -1,0 +1,34 @@
+/** Flex Columns */
+
+$gap: 1rem;
+$colCount: 12;
+
+@for $i from 1 through $colCount {
+  .col-#{$i} {
+    @include mobile {
+      &-xs {
+        flex-direction: column;
+      }
+    }
+    @include mobileL {
+      &-sm {
+        flex-direction: column;
+      }
+    }
+    @include tablet {
+      &-md {
+        flex-direction: column;
+      }
+    }
+    @include laptop {
+      &-lg {
+        flex-direction: column;
+      }
+    }
+    @include desktop {
+      &-lg {
+        flex-direction: column;
+      }
+    }
+  }
+}

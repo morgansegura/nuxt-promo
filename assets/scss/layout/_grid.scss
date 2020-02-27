@@ -1,0 +1,298 @@
+/** [CSS Grid] */
+
+$colGap: 8;
+$rowGap: 8;
+$cols: 12;
+$rows: 12;
+// Cols
+@for $i from 1 through $cols {
+  .grid-#{$i} {
+    display: grid;
+    grid-template-columns: repeat($i, 1fr);
+  }
+  .grid {
+    display: grid;
+    @include mobile {
+      &-xs-#{$i} {
+        grid-template-columns: repeat($i, 1fr);
+      }
+    }
+    @include mobileL {
+      &-sm-#{$i} {
+        grid-template-columns: repeat($i, 1fr);
+      }
+    }
+    @include tablet {
+      &-md-#{$i} {
+        grid-template-columns: repeat($i, 1fr);
+      }
+    }
+    @include laptop {
+      &-lg-#{$i} {
+        grid-template-columns: repeat($i, 1fr);
+      }
+    }
+    @include desktop {
+      &-lg-#{$i} {
+        grid-template-columns: repeat($i, 1fr);
+      }
+    }
+  }
+}
+
+// Col Span
+@for $i from 1 through $cols {
+  .col-span-#{$i} {
+    grid-column: span $i;
+  }
+  .col-span {
+    @include mobile {
+      &-xs-#{$i} {
+        grid-column: span $i;
+      }
+    }
+    @include mobileL {
+      &-sm-#{$i} {
+        grid-column: span $i;
+      }
+    }
+    @include tablet {
+      &-md-#{$i} {
+        grid-column: span $i;
+      }
+    }
+    @include laptop {
+      &-lg-#{$i} {
+        grid-column: span $i;
+      }
+    }
+    @include desktop {
+      &-lg-#{$i} {
+        grid-column: span $i;
+      }
+    }
+  }
+}
+
+// Rows
+@for $i from 1 through $rows {
+  .rows-#{$i} {
+    grid-template-rows: repeat($i, 1fr);
+  }
+  .rows {
+    @include mobile {
+      &-xs-#{$i} {
+        grid-template-rows: repeat($i, 1fr);
+      }
+    }
+    @include mobileL {
+      &-sm-#{$i} {
+        grid-template-rows: repeat($i, 1fr);
+      }
+    }
+    @include tablet {
+      &-md-#{$i} {
+        grid-template-rows: repeat($i, 1fr);
+      }
+    }
+    @include laptop {
+      &-lg-#{$i} {
+        grid-template-rows: repeat($i, 1fr);
+      }
+    }
+    @include desktop {
+      &-lg-#{$i} {
+        grid-template-rows: repeat($i, 1fr);
+      }
+    }
+  }
+}
+
+// Row Span
+@for $i from 1 through $cols {
+  .row-span-#{$i} {
+    grid-row: span $i;
+  }
+  .row-span {
+    @include mobile {
+      &-xs-#{$i} {
+        grid-row: span $i;
+      }
+    }
+    @include mobileL {
+      &-sm-#{$i} {
+        grid-row: span $i;
+      }
+    }
+    @include tablet {
+      &-md-#{$i} {
+        grid-row: span $i;
+      }
+    }
+    @include laptop {
+      &-lg-#{$i} {
+        grid-row: span $i;
+      }
+    }
+    @include desktop {
+      &-lg-#{$i} {
+        grid-row: span $i;
+      }
+    }
+  }
+}
+
+// Grid Gap
+
+.gap {
+  &-xxs {
+    grid-gap: 0.125rem;
+    &-xs {
+      grid-gap: 0.125rem 0.25rem;
+    }
+    &-sm {
+      grid-gap: 0.125rem 0.5rem;
+    }
+    &-md {
+      grid-gap: 0.125rem 1rem;
+    }
+    &-lg {
+      grid-gap: 0.125rem 2rem;
+    }
+    &-xl {
+      grid-gap: 0.125rem 4rem;
+    }
+    &-xxl {
+      grid-gap: 0.125rem 8rem;
+    }
+  }
+  &-xs {
+    grid-gap: 0.25rem;
+    &-xxs {
+      grid-gap: 0.25rem 0.125rem;
+    }
+    &-sm {
+      grid-gap: 0.25rem 0.5rem;
+    }
+    &-md {
+      grid-gap: 0.25rem 1rem;
+    }
+    &-lg {
+      grid-gap: 0.25rem 2rem;
+    }
+    &-xl {
+      grid-gap: 0.25rem 4rem;
+    }
+    &-xxl {
+      grid-gap: 0.25rem 8rem;
+    }
+  }
+
+  &-sm {
+    grid-gap: 0.5rem;
+    &-xxs {
+      grid-gap: 0.5rem 0.125rem;
+    }
+    &-xs {
+      grid-gap: 0.5rem 0.25rem;
+    }
+    &-md {
+      grid-gap: 0.5rem 1rem;
+    }
+    &-lg {
+      grid-gap: 0.5rem 2rem;
+    }
+    &-xl {
+      grid-gap: 0.5rem 4rem;
+    }
+    &-xxl {
+      grid-gap: 0.5rem 8rem;
+    }
+  }
+  &-md {
+    grid-gap: 1rem;
+    &-xxs {
+      grid-gap: 1rem 0.125rem;
+    }
+    &-xs {
+      grid-gap: 1rem 0.25rem;
+    }
+    &-sm {
+      grid-gap: 1rem 0.5rem;
+    }
+    &-lg {
+      grid-gap: 1rem 2rem;
+    }
+    &-xl {
+      grid-gap: 1rem 4rem;
+    }
+    &-xxl {
+      grid-gap: 1rem 8rem;
+    }
+  }
+  &-lg {
+    grid-gap: 2rem;
+    &-xxs {
+      grid-gap: 2rem 0.125rem;
+    }
+    &-xs {
+      grid-gap: 2rem 0.25rem;
+    }
+    &-sm {
+      grid-gap: 2rem 0.5rem;
+    }
+    &-md {
+      grid-gap: 2rem 1rem;
+    }
+    &-xl {
+      grid-gap: 2rem 4rem;
+    }
+    &-xxl {
+      grid-gap: 2rem 8rem;
+    }
+  }
+
+  &-xl {
+    grid-gap: 4rem;
+    &-xxs {
+      grid-gap: 4rem 0.125rem;
+    }
+    &-xs {
+      grid-gap: 4rem 0.25rem;
+    }
+    &-sm {
+      grid-gap: 4rem 0.5rem;
+    }
+    &-md {
+      grid-gap: 4rem 1rem;
+    }
+    &-lg {
+      grid-gap: 4rem 2rem;
+    }
+    &-xxl {
+      grid-gap: 4rem 8rem;
+    }
+  }
+
+  &-xxl {
+    grid-gap: 8rem;
+    &-xxs {
+      grid-gap: 8rem 0.125rem;
+    }
+    &-xs {
+      grid-gap: 8rem 0.25rem;
+    }
+    &-sm {
+      grid-gap: 8rem 0.5rem;
+    }
+    &-md {
+      grid-gap: 8rem 1rem;
+    }
+    &-lg {
+      grid-gap: 8rem 2rem;
+    }
+    &-xl {
+      grid-gap: 8rem 4rem;
+    }
+  }
+}
