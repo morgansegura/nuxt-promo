@@ -1,32 +1,19 @@
 <template>
-  <div class="full-page-takeover-header">
-    <div class="full-page-takeover-header-logo">
-      <p class="full-page-takeover-header-logo-title">
-        <header-logo />
-      </p>
-    </div>
-    <div class="full-page-takeover-header-divider">
-    </div>
-    <div class="full-page-takeover-header-text">
-      {{title}}
-    </div>
-    <div class="user-box">
-      <figure class="image is-32x32 m-r-sm">
-        <img class="is-rounded" :src="user.avatar">
-      </figure>
-      <div class="m-r-sm">
-        Welcome {{user.username}}!
+  <md-toolbar md-elevation="0">
+    <div class="md-toolbar-section-start">
+      <div class="md-subheading">
+        {{ title }}
       </div>
     </div>
-    <slot name="actionMenu"></slot>
-    <div v-if="exitLink" class="full-page-takeover-header-button">
-      <nuxt-link
-        :to="exitLink"
-        class="button is-danger is-small is-inverted is-outlined">
-        Exit
-      </nuxt-link>
+    <div class="md-toolbar-section-end">
+      <div v-if="exitLink" class="md-alignment-right-center">
+        <md-button :to="exitLink" class="md-dense md-primary">
+          Exit
+        </md-button>
+      </div>
+      <slot name="actionMenu"></slot>
     </div>
-  </div>
+  </md-toolbar>
 </template>
 <script>
 import HeaderLogo from '~/components/Logo'
@@ -34,32 +21,32 @@ export default {
   props: {
     title: {
       required: true,
-      type: String
+      type: String,
     },
     exitLink: {
       required: false,
       type: String,
-      default: null
-    }
+      default: null,
+    },
   },
   components: {
-    HeaderLogo
+    HeaderLogo,
   },
   computed: {
     user() {
       return this.$store.getters['auth/authUser'] || {}
-    }
-  }
+    },
+  },
 }
 </script>
 <style scoped>
-  .user-box {
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    margin-right: 10px;
-    font-size: 1rem;
-    font-weight: 400;
-  }
+.user-box {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-right: 10px;
+  font-size: 1rem;
+  font-weight: 400;
+}
 </style>

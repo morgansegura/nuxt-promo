@@ -1,6 +1,6 @@
 <template>
   <!-- Container -->
-  <div class="page-container transparent-toolbar">
+  <div class="page-container transparent-toolbar with-border-bottom">
     <md-app md-mode="fixed">
       <!-- Toolbar -->
       <md-app-toolbar class="md-transparent" md-mode="reveal" md-elevation="0">
@@ -58,9 +58,9 @@
         <div class="content__inner">
           <nuxt />
         </div>
-        <footer-main />
       </md-app-content>
     </md-app>
+    <footer-main />
   </div>
 </template>
 <script>
@@ -87,7 +87,7 @@ export default {
   /* height: 100%; */
   height: 100vh;
 }
-.md-toolbar {
+.with-border-bottom {
   border-bottom: 1px solid rgba(#000, 0.05);
 }
 .transparent-toolbar {

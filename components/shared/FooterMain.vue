@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <div class="footer-left">
-      <span class="md-title">Promote</span>
+      <span class="md-subheading">Footer</span>
     </div>
     <div class="footer-right">
       <span class="md-caption">&copy; {{ new Date().getFullYear() }}</span>
@@ -23,7 +23,6 @@ export default {}
   border-top: 1px solid rgba(#000, 0.05);
   /* background: red; */
   border-radius: 4px;
-  margin-top: 2rem;
 
   &-left {
     width: 50%;

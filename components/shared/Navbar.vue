@@ -18,7 +18,7 @@
 
         <md-menu-content>
           <md-menu-item v-if="true" @click="() => $router.push('/instructor')">
-            <span class="md-list-item-text">Register</span>
+            <span class="md-list-item-text">Instrucor</span>
           </md-menu-item>
           <!-- <md-divider></md-divider> -->
           <md-menu-item @click="logout">
@@ -29,7 +29,6 @@
       </md-menu>
     </template>
     <!-- Not logged in  -->
-
     <template v-else>
       <md-menu md-size="small" :md-offset-x="127" :md-offset-y="0">
         <md-button class="md-icon-button" md-menu-trigger>
