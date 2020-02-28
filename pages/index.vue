@@ -128,7 +128,6 @@
 </template>
 
 <script>
-import { CardBasic } from '~/components/MaterialCore/Card/CardBasic'
 import CourseCard from '~/components/CourseCard'
 import BlogCard from '~/components/BlogCard'
 import Hero from '~/components/shared/Hero'

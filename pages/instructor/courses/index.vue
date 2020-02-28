@@ -2,7 +2,10 @@
   <div>
     <instructor-header title="Create your courses">
       <template #actionMenu>
-        <md-button to="/instructor/course/create" class="md-dense md-primary">
+        <md-button
+          to="/instructor/course/create"
+          class="md-dense md-primary md-outline"
+        >
           New Course
         </md-button>
         <md-button to="/" class="md-dense md-primary">

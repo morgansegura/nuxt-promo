@@ -1,9 +1,13 @@
 <template>
   <!-- Container -->
-  <div class="page-container transparent-toolbar with-border-bottom">
-    <md-app md-mode="fixed">
+  <div class="page-container transparent-toolbar">
+    <md-app md-waterfall md-mode="fixed">
       <!-- Toolbar -->
-      <md-app-toolbar class="md-transparent" md-mode="reveal" md-elevation="0">
+      <md-app-toolbar
+        class="md-transparent with-border-bottom"
+        md-mode="reveal"
+        md-elevation="0"
+      >
         <div class="md-toolbar-section-start">
           <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
             <md-icon>menu</md-icon>
@@ -83,9 +87,13 @@ export default {
 }
 </script>
 <style lang="scss">
-.md-app {
-  /* height: 100%; */
+.page-container {
+  display: flex;
+  flex-direction: column;
   height: 100vh;
+}
+.md-app {
+  height: 100%;
 }
 .with-border-bottom {
   border-bottom: 1px solid rgba(#000, 0.05);
@@ -96,7 +104,6 @@ export default {
   }
 }
 .content__inner {
-  /* min-height: calc(100vh - 180px); */
   background-color: transparent;
 }
 </style>

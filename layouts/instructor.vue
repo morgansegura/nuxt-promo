@@ -1,7 +1,7 @@
 <template>
   <!-- Container -->
   <div class="page-container transparent-toolbar">
-    <md-app md-mode="fixed">
+    <md-app md-waterfall md-mode="fixed">
       <!-- Toolbar -->
       <md-app-toolbar
         class="md-transparent with-border-bottom"
@@ -94,7 +94,7 @@ export default {
 <style lang="scss">
 .md-app {
   /* height: 100%; */
-  height: 100vh;
+  /* height: 100vh; */
 }
 .with-border-bottom {
   border-bottom: 1px solid rgba(#000, 0.05);
@@ -105,7 +105,7 @@ export default {
   }
 }
 .content__inner {
-  /* min-height: calc(100vh - 180px); */
+  min-height: calc(100vh - 180px);
   background-color: transparent;
 }
 </style>
