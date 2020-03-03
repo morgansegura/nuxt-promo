@@ -11,39 +11,62 @@
       </div>
 
       <!-- Logged in -->
-      <md-menu md-size="small" :md-offset-x="127" :md-offset-y="0">
+      <md-menu md-size="medium" :md-offset-x="100" :md-offset-y="0">
         <md-button class="md-icon-button" md-menu-trigger>
           <md-icon>more_vert</md-icon>
         </md-button>
 
         <md-menu-content>
-          <md-menu-item v-if="true" @click="() => $router.push('/instructor')">
-            <span class="md-list-item-text">Instrucor</span>
-          </md-menu-item>
-          <!-- <md-divider></md-divider> -->
-          <md-menu-item @click="logout">
-            <span>Logout</span>
-            <md-icon>account_circle</md-icon>
-          </md-menu-item>
+          <md-list>
+            <md-list-item
+              v-if="true"
+              @click="() => $router.push('/instructor/courses')"
+            >
+              <span class="md-body-1">My Courses</span>
+              <md-icon>movie</md-icon>
+            </md-list-item>
+            <md-list-item
+              v-if="true"
+              @click="() => $router.push('/instructor/blogs')"
+            >
+              <span class="md-body-1">My Blogs</span>
+              <md-icon>library_books</md-icon>
+            </md-list-item>
+            <md-list-item
+              v-if="true"
+              @click="() => $router.push('/instructor/heroes')"
+            >
+              <span class="md-body-1">My Heros</span>
+              <md-icon>picture_in_picture</md-icon>
+            </md-list-item>
+            <!-- <md-divider></md-divider> -->
+            <md-list-item @click="logout">
+              <span class="md-body-1">Logout</span>
+              <md-icon>exit_to_app</md-icon>
+            </md-list-item>
+          </md-list>
         </md-menu-content>
       </md-menu>
     </template>
     <!-- Not logged in  -->
     <template v-else>
-      <md-menu md-size="small" :md-offset-x="127" :md-offset-y="0">
+      <md-menu md-size="medium" :md-offset-x="100" :md-offset-y="0">
         <md-button class="md-icon-button" md-menu-trigger>
           <md-icon>more_vert</md-icon>
         </md-button>
 
         <md-menu-content>
-          <md-menu-item to="/register">
-            <span class="md-list-item-text">Register</span>
-          </md-menu-item>
-          <!-- <md-divider></md-divider> -->
-          <md-menu-item to="/login">
-            <span>Login</span>
-            <md-icon>account_circle</md-icon>
-          </md-menu-item>
+          <md-list>
+            <md-list-item to="/register">
+              <span class="md-body-1">Register</span>
+              <md-icon>account_box</md-icon>
+            </md-list-item>
+            <!-- <md-divider></md-divider> -->
+            <md-list-item to="/login">
+              <span class="md-body-1">Login</span>
+              <md-icon>open_in_browser</md-icon>
+            </md-list-item>
+          </md-list>
         </md-menu-content>
       </md-menu>
     </template>

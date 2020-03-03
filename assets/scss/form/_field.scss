@@ -1,0 +1,127 @@
+.md-focused {}
+
+$highlightColorLight: $info;
+$highlightColorDark: $primary;
+
+.md-field.md-outline-light,
+.md-field.md-with-bg-light,
+.md-field.md-outline-dark,
+.md-field.md-with-bg-dark {
+    padding-left: 0.75rem;
+
+    & label {
+        padding-left: 0.75rem;
+        top: 13px;
+    }
+
+    &.md-outline-light.md-theme-default:before,
+    &.md-outline-light.md-theme-default:after,
+    &.md-outline-dark.md-theme-default:before,
+    &.md-outline-dark.md-theme-default:after {
+        background-color: transparent;
+        content: none;
+    }
+
+    // Selected
+    &.md-focused {
+        & label {
+            top: 0;
+        }
+    }
+}
+
+
+
+
+// App Light Theme
+
+// Field with outline
+.md-field.md-outline-light {
+    border-radius: 4px;
+    background-color: md-get-palette-color(gray, 100);
+    border: solid md-get-palette-color(gray, 300);
+    border-width: 1px;
+
+    // Focused
+    &.md-focused {
+        border-color: md-get-palette-color(gray, 400);
+        background-color: md-get-palette-color(gray, 200);
+
+        & label,
+        & caret {
+            color: $highlightColorDark;
+        }
+    }
+}
+
+// Field with background-color
+.md-field.md-with-bg-light {
+    background-color: md-get-palette-color(gray, 100);
+    border-radius: 3px 3px 0 0;
+
+    // Focused
+    &.md-focused {
+        border-color: md-get-palette-color(gray, 100);
+        background-color: md-get-palette-color(gray, 100);
+
+        &.md-outline-light.md-theme-default:before,
+        &.md-outline-light.md-theme-default:after {
+            // A color
+            background-color: $highlightColorDark;
+            content: "";
+        }
+
+        & label,
+        & caret {
+            color: $highlightColorDark;
+        }
+    }
+
+}
+
+
+// App Dark Theme
+
+// Field with outline
+.md-field.md-outline-dark {
+    border-radius: 4px;
+    background-color: rgba(black, 0.1);
+    border: solid rgba(black, 0.2);
+    border-width: 1px;
+
+    // Focused
+    &.md-focused {
+        border-color: rgba(black, 0.3);
+        background-color: rgba(black, 0.2);
+
+        & label,
+        & caret {
+            color: $highlightColorDark;
+        }
+    }
+}
+
+// Field with background-color
+.md-field.md-with-bg-dark {
+    background-color: rgba(black, .1);
+    border-radius: 3px 3px 0 0;
+
+    // Focused
+    &.md-focused {
+        border-color: rgba(black, 0.3);
+        background-color: rgba(black, 0.2);
+
+        &.md-outline-dark.md-theme-default:before,
+        &.md-outline-dark.md-theme-default:after {
+            // A color
+            background-color: $highlightColorLight;
+            content: "";
+        }
+
+        & label,
+        & caret {
+            color: $highlightColorLight;
+        }
+    }
+
+}

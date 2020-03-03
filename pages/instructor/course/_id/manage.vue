@@ -1,11 +1,11 @@
 <template>
   <div class="manage-page">
-    <Header title="Some very nice course name" exitLink="/instructor/courses">
+    <Header title="Manage your course page." exitLink="/instructor/courses">
       <template #actionMenu>
         <md-button
           @click="updateCourse"
           :disabled="!canUpdateCourse"
-          class="md-dense md-raised md-primary"
+          class="md-dense md-raised md-primary md-outline"
         >
           Save
         </md-button>

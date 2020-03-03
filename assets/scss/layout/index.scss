@@ -1,27 +1,12 @@
-/** Device */
-
+// Devices
 @import './device';
-
-/** Outline */
-
-@import './outline';
-
-/** Spacing */
-
+// Spacing
 @import './spacing';
-
-/** Flexbox */
-
-@import './flexbox';
-
-/** Grid */
-
-@import './grid';
-
-/** Columns */
-
-@import './columns';
-
-/** Content */
-
+// Content
 @import './content';
+// Flexbox
+@import './flexbox';
+// Flex grid
+@import './columns';
+// Grid
+@import './grid';

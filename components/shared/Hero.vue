@@ -11,9 +11,11 @@
         <div class="content">
           <h1 class="md-title">Super Amazing Promo</h1>
           <p class="md-subtitle">Super Amazing Promo Subtitle</p>
-          <md-button target="_" :href="'#'" class="md-primary"
-            >Learn More</md-button
-          >
+          <div class="my-2">
+            <div small color="primary" target="_" :href="'#'">
+              Learn More
+            </div>
+          </div>
         </div>
       </div>
     </div>

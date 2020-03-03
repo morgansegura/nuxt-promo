@@ -1,26 +1,48 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900|Material+Icons&display=swap');
-/** 
-[Theme: Default Light] 
-Contents: spacing, device, container, columns, flexbox, grid, content
-*/
+@import url('//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Material+Icons');
 
-@import '~vue-material/dist/theme/engine'; // Import the theme engine
+/* Setup initial defaults */
+@import '~vue-material/dist/theme/engine';
 
-@include md-register-theme(
-  'default',
-  (
-    primary: md-get-palette-color(amber, A400),
-    accent: md-get-palette-color(yellow, A400),
-  )
-);
+$primary: md-get-palette-color(indigo, A200);
+$accent: md-get-palette-color(cyan, A400);
+$success: md-get-palette-color(green, A400);
+$info: md-get-palette-color(lightblue, A400);
+$warning: md-get-palette-color(amber, A400);
+$danger: md-get-palette-color(deeporange, A400);
+$textDark: rgba(black, 0.87);
 
-//
 
-@import '~vue-material/dist/theme/all';
 
-.md-app .md-content.md-theme-default {
-  border-right-color: var(
-    --md-theme-default-divider-on-background,
-    rgba(0, 0, 0, 0)
-  );
+// Primary and secondary colors
+@include md-register-theme('default',
+    (primary: $primary,
+        accent: $accent,
+        success: $success,
+        info: $info,
+        warning: $warning,
+        danger: $danger,
+        theme: 'light',
+    ));
+
+@import "~vue-material/dist/theme/all";
+
+.app {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    &__content {
+        flex: 1;
+    }
 }
+
+
+
+// Theme device styles [device, content, container, spacing]
+@import './layout';
+// Theme button styles [raised, outline, color]
+@import './button';
+// Theme form styles [inputs]
+@import './form';

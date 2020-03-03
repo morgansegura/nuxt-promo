@@ -3,10 +3,52 @@
 .container {
     margin-left: auto;
     margin-right: auto;
+
     @include mobile {
         max-width: 90%;
     }
+
     @include tablet {
         max-width: 85%;
+    }
+}
+
+.t {
+    &-center {
+        text-align: center;
+    }
+
+    &-left {
+        text-align: left;
+    }
+
+    &-right {
+        text-align: right;
+    }
+
+    &-justify {
+        text-align: justify;
+    }
+}
+
+.d {
+    &-flex {
+        display: flex;
+    }
+
+    &-block {
+        display: block;
+    }
+
+    &-inline {
+        display: inline;
+    }
+
+    &-inline-block {
+        display: inline-block;
+    }
+
+    &-grid {
+        display: grid;
     }
 }

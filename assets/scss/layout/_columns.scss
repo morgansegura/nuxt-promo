@@ -3,32 +3,49 @@
 $gap: 1rem;
 $colCount: 12;
 
+.flex-grid {
+    display: flex;
+    overflow: hidden;
+    padding: $gap;
+}
+
 @for $i from 1 through $colCount {
-  .col-#{$i} {
-    @include mobile {
-      &-xs {
-        flex-direction: column;
-      }
+    $formula: calc($i / $colCount * 100);
+
+    .col-#{$i} {
+        width: $formula;
+        margin-left: -#{$gap};
+        margin-right: -#{$gap};
+
+        @include mobile {
+            &-xs {
+                width: $formula;
+            }
+        }
+
+        @include mobileL {
+            &-sm {
+                width: $formula;
+            }
+        }
+
+        @include tablet {
+            &-md {
+                width: $formula;
+            }
+        }
+
+        @include laptop {
+            &-lg {
+                width: $formula;
+            }
+        }
+
+        @include desktop {
+            &-lg {
+                width: $formula;
+            }
+        }
     }
-    @include mobileL {
-      &-sm {
-        flex-direction: column;
-      }
-    }
-    @include tablet {
-      &-md {
-        flex-direction: column;
-      }
-    }
-    @include laptop {
-      &-lg {
-        flex-direction: column;
-      }
-    }
-    @include desktop {
-      &-lg {
-        flex-direction: column;
-      }
-    }
-  }
+
 }

@@ -1,5 +1,5 @@
 <template>
-  <md-toolbar md-elevation="0">
+  <md-toolbar class="md-transparent" md-elevation="0">
     <div class="md-toolbar-section-start">
       <div class="md-subheading">
         {{ title }}
@@ -7,7 +7,7 @@
     </div>
     <div class="md-toolbar-section-end">
       <div v-if="exitLink" class="md-alignment-right-center">
-        <md-button :to="exitLink" class="md-dense md-primary">
+        <md-button :to="exitLink" class="md-dense md-accent md-outline">
           Exit
         </md-button>
       </div>

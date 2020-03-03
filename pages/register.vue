@@ -4,13 +4,17 @@
       <!-- Login Form -->
       <md-card class="md-layout-item md-size-50 md-small-size-100">
         <!-- Progress Bar -->
-        <md-progress-bar md-mode="indeterminate" v-if="!sending" />
+        <md-progress-bar md-mode="indeterminate" v-if="sending" />
         <!-- Header -->
         <md-card-header>
           <div class="md-title">Registration</div>
         </md-card-header>
         <md-divider></md-divider>
-        <md-subheader>Please proceed to register.</md-subheader>
+        <md-subheader
+          ><span class="md-body-1"
+            >Please proceed to register.</span
+          ></md-subheader
+        >
         <!-- Content -->
         <md-card-content>
           <!-- Username Field -->
@@ -22,6 +26,7 @@
                   v-model="form.username"
                   @blur="$v.form.username.$touch()"
                   :disabled="sending"
+                  required
                   type="text"
                 />
                 <!-- Error Message -->
@@ -45,6 +50,7 @@
                   v-model="form.name"
                   @blur="$v.form.name.$touch()"
                   :disabled="sending"
+                  required
                   type="text"
                 />
                 <!-- Error Message -->
@@ -68,6 +74,7 @@
                   v-model="form.email"
                   @blur="$v.form.email.$touch()"
                   :disabled="sending"
+                  required
                   type="email"
                 />
                 <!-- Error Message -->
@@ -116,6 +123,7 @@
                   v-model="form.password"
                   @blur="$v.form.password.$touch()"
                   :disabled="sending"
+                  required
                   type="password"
                 />
                 <!-- Error Message -->
@@ -139,6 +147,7 @@
                   v-model="form.passwordConfirmation"
                   @blur="$v.form.passwordConfirmation.$touch()"
                   :disabled="sending"
+                  required
                   type="password"
                 />
                 <!-- Error Message -->
