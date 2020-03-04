@@ -3,7 +3,7 @@
   <div class="md-toolbar-section-end">
     <template v-if="isAuth">
       <!-- Avatar -->
-      <div>
+      <div class="pr-sm">
         <span>{{ user.username | shortenText(15) }} &nbsp;</span>
         <md-avatar class="md-small navbar-avatar">
           <img :src="user.avatar" alt="`${user.name}`" />
@@ -18,24 +18,15 @@
 
         <md-menu-content>
           <md-list>
-            <md-list-item
-              v-if="true"
-              @click="() => $router.push('/instructor/courses')"
-            >
+            <md-list-item v-if="true" @click="() => $router.push('/instructor/courses')">
               <span class="md-body-1">My Courses</span>
               <md-icon>movie</md-icon>
             </md-list-item>
-            <md-list-item
-              v-if="true"
-              @click="() => $router.push('/instructor/blogs')"
-            >
+            <md-list-item v-if="true" @click="() => $router.push('/instructor/blogs')">
               <span class="md-body-1">My Blogs</span>
               <md-icon>library_books</md-icon>
             </md-list-item>
-            <md-list-item
-              v-if="true"
-              @click="() => $router.push('/instructor/heroes')"
-            >
+            <md-list-item v-if="true" @click="() => $router.push('/instructor/heroes')">
               <span class="md-body-1">My Heros</span>
               <md-icon>picture_in_picture</md-icon>
             </md-list-item>
@@ -73,32 +64,32 @@
   </div>
 </template>
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters } from "vuex";
 
 export default {
   data() {
     return {
-      isActive: false,
-    }
+      isActive: false
+    };
   },
   computed: {
     ...mapGetters({
-      user: 'auth/authUser',
-      isAuth: 'auth/isAuthenticated',
-      isAdmin: 'auth/isAdmin',
-    }),
+      user: "auth/authUser",
+      isAuth: "auth/isAuthenticated",
+      isAdmin: "auth/isAdmin"
+    })
   },
   methods: {
     logout() {
       this.$store
-        .dispatch('auth/logout')
-        .then(() => this.$router.push('/login'))
+        .dispatch("auth/logout")
+        .then(() => this.$router.push("/login"));
     },
     toggleClass() {
-      this.isActive = !this.isActive
-    },
-  },
-}
+      this.isActive = !this.isActive;
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>

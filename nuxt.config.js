@@ -54,7 +54,7 @@ module.exports = {
     plugins: [
         { src: '~/plugins/filters' },
         { src: '~/plugins/material' },
-        { src: '~/plugins/directives' },
+        { src: '~/plugins/vuelidate' },
         { src: '~/plugins/toasted', ssr: false },
 
     ],
