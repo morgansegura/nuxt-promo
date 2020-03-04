@@ -14,6 +14,14 @@ $highlightColorDark: $primary;
         top: 13px;
     }
 
+    // Arrow icon
+    & .md-icon-font {
+        // padding-left: 0.75rem;
+        position: absolute;
+        top: 13px;
+        right: 0.75rem;
+    }
+
     &.md-outline-light.md-theme-default:before,
     &.md-outline-light.md-theme-default:after,
     &.md-outline-dark.md-theme-default:before,
@@ -29,8 +37,6 @@ $highlightColorDark: $primary;
         }
     }
 }
-
-
 
 
 // App Light Theme

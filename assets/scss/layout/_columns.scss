@@ -1,49 +1,59 @@
 /** Flex Columns */
 
-$gap: 1rem;
+$gap: 0.5rem;
 $colCount: 12;
 
 .flex-grid {
     display: flex;
+    width: 100%;
     overflow: hidden;
-    padding: $gap;
 }
 
 @for $i from 1 through $colCount {
-    $formula: calc($i / $colCount * 100);
+    $formula: calc((#{$i}/#{$colCount})*100%);
 
     .col-#{$i} {
-        width: $formula;
-        margin-left: -#{$gap};
-        margin-right: -#{$gap};
+        width: #{$formula};
+        margin-left: $gap;
+        margin-right: $gap;
 
         @include mobile {
             &-xs {
-                width: $formula;
+                width: #{$formula};
+                margin-left: $gap;
+                margin-right: $gap;
             }
         }
 
         @include mobileL {
             &-sm {
-                width: $formula;
+                width: #{$formula};
+                margin-left: $gap;
+                margin-right: $gap;
             }
         }
 
         @include tablet {
             &-md {
-                width: $formula;
+                width: #{$formula};
+                margin-left: $gap;
+                margin-right: $gap;
             }
         }
 
         @include laptop {
             &-lg {
-                width: $formula;
+                width: #{$formula};
+                margin-left: $gap;
+                margin-right: $gap;
             }
         }
 
         @include desktop {
             &-lg {
-                width: $formula;
+                width: #{$formula};
+                margin-left: $gap;
+                margin-right: $gap;
             }
         }
     }

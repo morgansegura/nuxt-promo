@@ -21,7 +21,7 @@ $textDark: rgba(black, 0.87);
         info: $info,
         warning: $warning,
         danger: $danger,
-        theme: 'light',
+        theme: 'dark',
     ));
 
 @import "~vue-material/dist/theme/all";

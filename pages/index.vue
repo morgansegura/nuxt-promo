@@ -17,69 +17,9 @@
                 />
               </template>
             </v-popover>-->
+            <blog-card :course="course" />
           </div>
         </div>
-        <section id="buttonDisplay">
-          <h3 class="md-title">Fields</h3>
-          <md-field class="md-outline-light">
-            <label>Initial Value</label>
-            <md-input class v-model="initial"></md-input>
-          </md-field>
-        </section>
-        <md-button class="md-button md-outline md-accent">Love and happiness</md-button>
-
-        <h2 class="md-display-4">h1. This is exactly what I wanted.</h2>
-        <h2 class="md-display-3">h2. This is exactly what I wanted.</h2>
-        <h2 class="md-display-2">h3. This is exactly what I wanted.</h2>
-        <h3 class="md-display-1">h4. Another title that looks satisfying.</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
-          quibusdam, non molestias et! Earum magnam, similique, quo recusandae
-          placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-          explicabo, neque.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
-          quibusdam, non molestias et! Earum magnam, similique, quo recusandae
-          placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-          explicabo, neque.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
-          quibusdam, non molestias et! Earum magnam, similique, quo recusandae
-          placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-          explicabo, neque.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
-          quibusdam, non molestias et! Earum magnam, similique, quo recusandae
-          placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-          explicabo, neque.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
-          quibusdam, non molestias et! Earum magnam, similique, quo recusandae
-          placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-          explicabo, neque.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
-          quibusdam, non molestias et! Earum magnam, similique, quo recusandae
-          placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-          explicabo, neque.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
-          quibusdam, non molestias et! Earum magnam, similique, quo recusandae
-          placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-          explicabo, neque.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
-          quibusdam, non molestias et! Earum magnam, similique, quo recusandae
-          placeat dicta asperiores modi sint ea repudiandae maxime? Quae non
-          explicabo, neque.
-        </p>
       </div>
     </div>
     <!-- <hero
@@ -138,6 +78,13 @@ export default {
   head: {
     title: "Online Courses and Blogs | Filip Jerga"
   },
+  data: () => ({
+    array: [],
+    boolean: false,
+    string: null,
+    novalue: null,
+    disabled: true
+  }),
   components: {
     CourseCard,
     BlogCard,

@@ -110,6 +110,14 @@
 }
 
 .justify {
+    &-self-fe {
+        justify-self: flex-end;
+    }
+
+    &-self-fs {
+        justify-self: flex-start;
+    }
+
     &-fe {
         -webkit-box-pack: end;
         -ms-flex-pack: end;
@@ -400,121 +408,121 @@
                 -webkit-box-align: end;
                 -ms-flex-align: end;
                 align-items: flex-end;
-}
-}
+            }
+        }
 
-@include tablet {
-    &-md {
-        -webkit-box-align: end;
-        -ms-flex-align: end;
-        align-items: flex-end;
-    }
-}
+        @include tablet {
+            &-md {
+                -webkit-box-align: end;
+                -ms-flex-align: end;
+                align-items: flex-end;
+            }
+        }
 
-@include laptop {
-    &-lg {
-        -webkit-box-align: end;
-        -ms-flex-align: end;
-        align-items: flex-end;
-    }
-}
+        @include laptop {
+            &-lg {
+                -webkit-box-align: end;
+                -ms-flex-align: end;
+                align-items: flex-end;
+            }
+        }
 
-@include desktop {
-    &-lg {
-        -webkit-box-align: end;
-        -ms-flex-align: end;
-        align-items: flex-end;
-    }
-}
-}
-
-&-fs {
-    align-items: flex-start;
-
-    @include mobile {
-        &-xs {
-            -webkit-box-align: start;
-            -ms-flex-align: start;
-            align-items: flex-start;
+        @include desktop {
+            &-lg {
+                -webkit-box-align: end;
+                -ms-flex-align: end;
+                align-items: flex-end;
+            }
         }
     }
 
-    @include mobileL {
-        &-sm {
-            -webkit-box-align: start;
-            -ms-flex-align: start;
-            align-items: flex-start;
+    &-fs {
+        align-items: flex-start;
+
+        @include mobile {
+            &-xs {
+                -webkit-box-align: start;
+                -ms-flex-align: start;
+                align-items: flex-start;
+            }
+        }
+
+        @include mobileL {
+            &-sm {
+                -webkit-box-align: start;
+                -ms-flex-align: start;
+                align-items: flex-start;
+            }
+        }
+
+        @include tablet {
+            &-md {
+                -webkit-box-align: start;
+                -ms-flex-align: start;
+                align-items: flex-start;
+            }
+        }
+
+        @include laptop {
+            &-lg {
+                -webkit-box-align: start;
+                -ms-flex-align: start;
+                align-items: flex-start;
+            }
+        }
+
+        @include desktop {
+            &-lg {
+                -webkit-box-align: start;
+                -ms-flex-align: start;
+                align-items: flex-start;
+            }
         }
     }
 
-    @include tablet {
-        &-md {
-            -webkit-box-align: start;
-            -ms-flex-align: start;
-            align-items: flex-start;
+    &-center {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+
+        @include mobile {
+            &-xs {
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+            }
+        }
+
+        @include mobileL {
+            &-sm {
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+            }
+        }
+
+        @include tablet {
+            &-md {
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+            }
+        }
+
+        @include laptop {
+            &-lg {
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+            }
+        }
+
+        @include desktop {
+            &-lg {
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+            }
         }
     }
-
-    @include laptop {
-        &-lg {
-            -webkit-box-align: start;
-            -ms-flex-align: start;
-            align-items: flex-start;
-        }
-    }
-
-    @include desktop {
-        &-lg {
-            -webkit-box-align: start;
-            -ms-flex-align: start;
-            align-items: flex-start;
-        }
-    }
-}
-
-&-center {
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-
-    @include mobile {
-        &-xs {
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-        }
-    }
-
-    @include mobileL {
-        &-sm {
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-        }
-    }
-
-    @include tablet {
-        &-md {
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-        }
-    }
-
-    @include laptop {
-        &-lg {
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-        }
-    }
-
-    @include desktop {
-        &-lg {
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-        }
-    }
-}
 }
