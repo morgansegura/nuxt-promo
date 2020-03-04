@@ -3,6 +3,7 @@
     <!-- Header/Toolbar -->
     <md-toolbar md-elevation="0">
       <h3 class="md-title">Default</h3>
+      <navbar />
     </md-toolbar>
 
     <!-- Content Section -->
