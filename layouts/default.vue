@@ -1,8 +1,11 @@
 <template>
   <div class="app__container">
     <!-- Header/Toolbar -->
-    <md-toolbar md-elevation="0">
-      <h3 class="md-title">Default</h3>
+    <md-toolbar md-waterfall md-mode="fixed" md-elevation="0">
+      <a href="/">
+        <h3 class="md-title">Site Name</h3>
+      </a>
+      <!-- <header-logo /> -->
       <navbar />
     </md-toolbar>
 
