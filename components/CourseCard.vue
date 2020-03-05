@@ -1,35 +1,32 @@
 <template>
-  <md-card md-with-hover>
+  <md-card md-with-hover class="course-card-dark">
     <md-ripple>
-      <md-card-media>
-        <img :src="course.image" alt="Placeholder image" />
-      </md-card-media>
+      <md-card-area>
+        <md-card-media class>
+          <img :src="course.image" alt="Placeholder image" />
+        </md-card-media>
 
-      <md-card-header>
-        <div class="md-title">{{ course.title | shortenText(45) }}</div>
-        <div class="md-subhead">by {{ course.author.name }}</div>
-      </md-card-header>
+        <md-card-header>
+          <div class="md-title">{{ course.title | shortenText(45) }}</div>
+          <div class="md-subhead">by {{ course.author.name }}</div>
+        </md-card-header>
 
-      <md-card-content>
-        {{ course.subtitle | shortenText(45) }}
+        <md-card-content>
+          {{ course.subtitle | shortenText(45) }}
+          <div class="price-box">
+            <span class="price">${{ course.price }}</span>
+            <span class="disc-price">${{ course.discountedPrice }}</span>
+          </div>
+        </md-card-content>
+      </md-card-area>
 
-        <div class="price-box">
-          <span class="price">${{ course.price }}</span>
-          <span class="disc-price">${{ course.discountedPrice }}</span>
-        </div>
-      </md-card-content>
       <md-card-actions md-alignment="right">
         <md-button :to="''">Learn More</md-button>
-        <md-button
-          target="_"
-          :href="course.productLink"
-          class="md-raised md-primary"
-        >
-          Enroll
-        </md-button>
+        <md-button target="_" :href="course.productLink" class="md-raised md-primary">Enroll</md-button>
       </md-card-actions>
     </md-ripple>
   </md-card>
+
   <!-- 
     <div class="card">
         <div class="card-image">
@@ -57,7 +54,7 @@
         <nuxt-link :to="''" class="card-footer-item">Learn More</nuxt-link>
         <a target="_" :href="course.productLink" class="card-footer-item">Enroll</a>
         </footer>
-    </div> -->
+  </div>-->
 </template>
 
 <script>
@@ -65,10 +62,10 @@ export default {
   props: {
     course: {
       type: Object,
-      required: true,
-    },
-  },
-}
+      required: true
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
