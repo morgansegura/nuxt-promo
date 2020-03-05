@@ -14,7 +14,7 @@
       <md-card-content>
         <!-- Email Field -->
 
-        <md-field :class="getValidationClass('email')" class="md-with-bg-dark">
+        <md-field :class="getValidationClass('email')" class="md-with-bg-light">
           <label>Type your email</label>
           <md-input
             v-model="form.email"
@@ -33,7 +33,7 @@
 
         <!-- Password Field -->
 
-        <md-field :class="getValidationClass('password')" class="md-with-bg-dark">
+        <md-field :class="getValidationClass('password')" class="md-with-bg-light">
           <label>Enter your password</label>
           <md-input
             v-model="form.password"
