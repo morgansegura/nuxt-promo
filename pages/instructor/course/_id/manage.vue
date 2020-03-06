@@ -1,136 +1,114 @@
 <template>
-  <div class="manage-page">
-    <Header title="Manage your course page." exitLink="/instructor/courses">
+  <div class="container-xl">
+    <instructor-header title="Manage your course page." exitLink="/instructor/courses">
       <template #actionMenu>
-        <md-button
-          @click="updateCourse"
-          :disabled="!canUpdateCourse"
-          class="md-dense md-raised md-primary md-outline"
-        >
-          Save
-        </md-button>
-      </template>
-    </Header>
-
-    <div class="course-manage">
-      <div class="md-layout md-gutter md-alignment-center">
-        <!-- <aside class="menu is-hidden-mobile"> -->
-        <aside class="md-layout-item md-medium-size-33 md-xsmall-size-100">
-          <md-list>
-            <!-- Course Editing -->
-            <md-subheader class="md-title">
-              Course Editing
-            </md-subheader>
-            <md-list-item
-              @click.prevent="navigateTo(1)"
-              :class="activeComponentClass(1)"
-            >
-              <!-- display TargetStudents -->
-              Target Your Students
-            </md-list-item>
-            <md-list-item
-              @cmd-list-itemck.prevent="navigateTo(2)"
-              :class="activeComponentClass(2)"
-            >
-              <!-- display LandingPage -->
-              Course Landing Page
-            </md-list-item>
-          </md-list>
-          <p class="md-title">
-            Course Managment
-          </p>
-          <ul class="menu-list">
-            <li>
-              <!-- display Price -->
-              <a
-                @click.prevent="navigateTo(3)"
-                :class="activeComponentClass(3)"
-              >
-                Price
-              </a>
-            </li>
-            <li>
-              <!-- display Status -->
-              <a
-                @click.prevent="navigateTo(4)"
-                :class="activeComponentClass(4)"
-              >
-                Status
-              </a>
-            </li>
-          </ul>
-        </aside>
-
-        <div class="md-layout-item md-medium-size-66 md-xsmall-size-100">
-          <keep-alive>
-            <component
-              @courseValueUpdated="handleCourseUpdate"
-              :is="activeComponent"
-              :course="course"
-            />
-          </keep-alive>
+        <div class="pl-sm mr-n-sm">
+          <md-button
+            @click="updateCourse"
+            :disabled="!canUpdateCourse"
+            class="md-dense md-raised md-primary"
+          >Save</md-button>
         </div>
-      </div>
+      </template>
+    </instructor-header>
+    <md-tabs class="md-transparent" md-alignment="fixed">
+      <md-tab
+        id="tab-target-students"
+        md-label="Your Students"
+        @click.prevent="navigateTo(1)"
+        :class="activeComponentClass(1)"
+        exact
+      ></md-tab>
+      <md-tab
+        id="tab-home"
+        md-label="Course Page"
+        @click.prevent="navigateTo(2)"
+        :class="activeComponentClass(2)"
+        exact
+      ></md-tab>
+      <md-tab
+        id="tab-price"
+        md-label="Price"
+        @click.prevent="navigateTo(3)"
+        :class="activeComponentClass(3)"
+        exact
+      ></md-tab>
+      <md-tab
+        id="tab-status"
+        md-label="Status"
+        @click.prevent="navigateTo(4)"
+        :class="activeComponentClass(4)"
+        exact
+      ></md-tab>
+    </md-tabs>
+    <div>
+      <keep-alive>
+        <component @courseValueUpdated="handleCourseUpdate" :is="activeComponent" :course="course" />
+      </keep-alive>
     </div>
   </div>
 </template>
 
 <script>
-import Header from '~/components/shared/Header'
-import TargetStudents from '~/components/instructor/TargetStudents'
-import LandingPage from '~/components/instructor/LandingPage'
-import Status from '~/components/instructor/Status'
-import Price from '~/components/instructor/Price'
-import MultiComponentMixin from '~/mixins/MultiComponentMixin'
-import { mapState } from 'vuex'
+import InstructorHeader from "~/components/shared/Header";
+import TargetStudents from "~/components/instructor/TargetStudents";
+import LandingPage from "~/components/instructor/LandingPage";
+import Status from "~/components/instructor/Status";
+import Price from "~/components/instructor/Price";
+import MultiComponentMixin from "~/mixins/MultiComponentMixin";
+import { mapState } from "vuex";
 export default {
-  layout: 'instructor',
+  layout: "instructor",
   components: {
-    Header,
+    InstructorHeader,
     TargetStudents,
     LandingPage,
     Price,
-    Status,
+    Status
   },
   mixins: [MultiComponentMixin],
   data() {
     return {
-      steps: ['TargetStudents', 'LandingPage', 'Price', 'Status'],
-    }
+      menuVisible: false,
+      steps: ["TargetStudents", "LandingPage", "Price", "Status"]
+    };
   },
   async fetch({ store, params }) {
-    await store.dispatch('instructor/course/fetchCourseById', params.id)
-    await store.dispatch('category/fetchCategories')
+    await store.dispatch("instructor/course/fetchCourseById", params.id);
+    await store.dispatch("category/fetchCategories");
   },
   computed: {
     ...mapState({
       course: ({ instructor }) => instructor.course.item,
-      canUpdateCourse: ({ instructor }) => instructor.course.canUpdateCourse,
-    }),
+      canUpdateCourse: ({ instructor }) => instructor.course.canUpdateCourse
+    })
   },
   methods: {
+    toggleMenu() {
+      this.menuVisible = !this.menuVisible;
+    },
     updateCourse() {
       this.$store
-        .dispatch('instructor/course/updateCourse')
+        .dispatch("instructor/course/updateCourse")
         .then(_ =>
-          this.$toasted.success('Course has been successfully updated!', {
-            duration: 3000,
+          this.$toasted.success("Course has been successfully updated!", {
+            duration: 3000
           })
         )
         .catch(error =>
           this.$toasted.error(`Course cannot be updated: ${error.message}`, {
-            duration: 3000,
+            duration: 3000
           })
-        )
+        );
     },
     handleCourseUpdate({ value, field }) {
-      this.$store.dispatch('instructor/course/updateCourseValue', {
+      this.$store.dispatch("instructor/course/updateCourseValue", {
         field,
-        value,
-      })
-    },
-  },
-}
+        value
+      });
+    }
+  }
+};
 </script>
 
 <style lang="scss">
@@ -175,6 +153,9 @@ export default {
         }
       }
     }
+  }
+  .md-drawer {
+    max-width: calc(100vw - 75%);
   }
 }
 </style>

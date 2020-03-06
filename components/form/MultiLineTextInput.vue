@@ -1,41 +1,37 @@
 <template>
-  <div>
-    <!-- Send a label through props -->
-    <label class="label">{{label}}</label>
-    <!-- Iterate lines here -->
-    <!-- TODO: change key of this div -->
-    <div
-        v-for="(line, index) in lines" 
-        :key="line.index"    
-        class="multi-field field">        
+  <div class="pl-md">
+    <p class="md-title">{{label}}</p>
+    <div v-for="(line, index) in lines" :key="line.index" class="multi-field field">
       <div class="control multi-control">
         <div class="multi-input-container">
-          <input
-            @input.prevent="emitUpdate($event, index)"
-            :value="line.value"
-            placeholder="Add Something Nice (:"
-            class="input is-medium multi-input"
-            type="text">
+          <md-field class="md-outline-light no-label">
+            <md-input
+              @keyup.prevent="emitUpdate($event, index)"
+              :value="line.value"
+              placeholder="Add Something Nice."
+              class="multi-input"
+              type="text"
+            ></md-input>
+            <input type="text" hidden style="display:none;" />
+          </md-field>
         </div>
-        <div class="btn-container">
+        <div class="btn-container mt-sm">
           <!-- Delete the line -->
-          <button
+          <md-button
+            class="md-icon-button ml-auto"
             @click.prevent="emitRemove(index)"
             type="button"
-            class="button m-l-sm is-small is-danger multi-button">
-            Delete
-          </button>
+          >
+            <md-icon>delete</md-icon>
+          </md-button>
         </div>
       </div>
     </div>
-    
+
     <!-- Add the Line -->
-    <button
-      @click="emitAdd"
-      type="button"
-      class="m-b-sm button is-medium is-link is-outlined">
-      Add an answer
-    </button>
+    <div class="mb-lg t-right pr-lg mr-sm">
+      <md-button @click="emitAdd" type="button" class="md-raised md-primary">Add an answer</md-button>
+    </div>
   </div>
 </template>
 <script>
@@ -51,58 +47,59 @@ export default {
     }
   },
   computed: {
-      lastLine() {
-          return this.lines[this.lines.length - 1]
-      },
-      hasLines() {
-          return this.lines.length > 0
-      },
-      hasLastLineValue() {
-          return this.lastLine && this.lastLine.value !== ''
-      },
-      canDeleteLine() {
-          return this.lines.length > 1
-      },
-      canAddLine() {
-          return this.hasLines && this.hasLastLineValue
-      }
+    lastLine() {
+      return this.lines[this.lines.length - 1];
+    },
+    hasLines() {
+      return this.lines.length > 0;
+    },
+    hasLastLineValue() {
+      return this.lastLine && this.lastLine.value !== "";
+    },
+    canDeleteLine() {
+      return this.lines.length > 1;
+    },
+    canAddLine() {
+      return this.hasLines && this.hasLastLineValue;
+    }
   },
   methods: {
-      emitAdd() {
-          if (this.canAddLine || this.lines.length === 0) {
-            this.$emit('addClicked')
-          }        
-      },
-      emitRemove(index) {
-        this.canDeleteLine && this.$emit('removeClicked', index)
-      },
-      emitUpdate(event, index) {
-        const {value} = event.target
-        this.$emit('valueUpdated', {value, index})
-      },
+    emitAdd() {
+      if (this.canAddLine || this.lines.length === 0) {
+        this.$emit("addClicked");
+      }
+    },
+    emitRemove(index) {
+      this.canDeleteLine && this.$emit("removeClicked", index);
+    },
+    emitUpdate(event, index) {
+      const { value } = event.target;
+      this.$emit("valueUpdated", { value, index });
+    }
   }
-}
+};
 </script>
 <style scoped lang="scss">
-.multi-input {
+/* .multi-input {
   float: left;
   width: 100%;
-}
-.multi-button {
+} */
+/* .multi-button {
   height: inherit;
-}
+} */
 .multi-input-container {
   display: flex;
   flex: 1;
 }
-.btn-container {
+.btn-container button {
   display: flex;
-  opacity: 0;
+  opacity: 0.3;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 .multi-control {
   display: flex;
-  &:hover > .btn-container {
-    opacity: 1;
-  }
 }
 </style>

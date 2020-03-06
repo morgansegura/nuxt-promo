@@ -1,12 +1,63 @@
 /** Flex Columns */
 
 $gap: 0.5rem;
-$colCount: 12;
+$colCount: 11;
 
 .flex-grid {
     display: flex;
     width: 100%;
     overflow: hidden;
+
+    @include mobile {
+        &-xs {
+            display: flex;
+            width: 100%;
+            overflow: hidden;
+        }
+    }
+
+    @include mobileL {
+        &-sm {
+            display: flex;
+            width: 100%;
+            overflow: hidden;
+        }
+    }
+
+    @include tablet {
+        &-md {
+            display: flex;
+            width: 100%;
+            overflow: hidden;
+        }
+    }
+
+    @include laptop {
+        &-lg {
+            display: flex;
+            width: 100%;
+            overflow: hidden;
+        }
+    }
+
+    @include desktop {
+        &-xl {
+            display: flex;
+            width: 100%;
+            overflow: hidden;
+        }
+    }
+}
+
+.col-12,
+.col-12-xs,
+.col-12-sm,
+.col-12-md,
+.col-12-lg,
+.col-12-xl {
+    width: 100%;
+    flex-basis: 100%;
+    flex: 1;
 }
 
 @for $i from 1 through $colCount {
@@ -50,7 +101,7 @@ $colCount: 12;
         }
 
         @include desktop {
-            &-lg {
+            &-xl {
                 width: #{$formula};
                 margin-left: $gap;
                 margin-right: $gap;

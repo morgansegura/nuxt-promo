@@ -15,6 +15,7 @@
     </main>
 
     <!-- Toolbar/Footer -->
+    <md-divider></md-divider>
     <md-toolbar md-elevation="0">
       <footer-main />
     </md-toolbar>
