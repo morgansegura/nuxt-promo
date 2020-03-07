@@ -1,14 +1,14 @@
 <template>
   <!-- Container -->
   <div class="app__container">
-    <!-- Header/Toolbar -->
-    <md-toolbar md-waterfall md-mode="fixed" md-elevation="0">
-      <a href="/">
-        <h3 class="md-title">Site Name</h3>
-      </a>
-      <!-- <header-logo /> -->
-
-      <navbar />
+    <md-toolbar md-waterfall md-mode="fixed" md-elevation="0" class="md-primary">
+      <div class="container d-flex align-center">
+        <a href="/">
+          <h3 class="md-title">Site Name</h3>
+        </a>
+        <!-- <header-logo /> -->
+        <navbar />
+      </div>
     </md-toolbar>
 
     <!-- Content Section -->

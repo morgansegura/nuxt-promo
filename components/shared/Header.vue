@@ -1,15 +1,15 @@
 <template>
-  <md-toolbar class="md-transparent" md-elevation="0">
-    <div class="md-toolbar-section-start">
-      <div class="md-subheading">{{ title }}</div>
+  <div class="action-row">
+    <div class="action-row__left">
+      <!-- <div class="md-subheading title-text">{{ title }}</div> -->
     </div>
-    <div class="md-toolbar-section-end">
-      <div v-if="exitLink" class="md-alignment-right-center">
+    <div class="action-row__right">
+      <div v-if="exitLink">
         <md-button :to="exitLink" class="md-dense md-primary md-outline">Exit</md-button>
       </div>
       <slot name="actionMenu"></slot>
     </div>
-  </md-toolbar>
+  </div>
 </template>
 <script>
 import HeaderLogo from "~/components/Logo";

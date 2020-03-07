@@ -1,7 +1,7 @@
 <template>
   <div class="card manage-card">
     <header class="card-header card-section">
-      <p class="md-display-1 py-md">Target your Students</p>
+      <p class="card-header-title">Target your students.</p>
     </header>
     <div class="card-content card-section">
       <form>

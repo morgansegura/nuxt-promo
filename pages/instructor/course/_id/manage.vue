@@ -2,26 +2,24 @@
   <div class="container-xl">
     <instructor-header title="Manage your course page." exitLink="/instructor/courses">
       <template #actionMenu>
-        <div class="pl-sm mr-n-sm">
-          <md-button
-            @click="updateCourse"
-            :disabled="!canUpdateCourse"
-            class="md-dense md-raised md-primary"
-          >Save</md-button>
-        </div>
+        <md-button
+          @click="updateCourse"
+          :disabled="!canUpdateCourse"
+          class="md-dense md-raised md-accent"
+        >Save</md-button>
       </template>
     </instructor-header>
-    <md-tabs class="md-transparent" md-alignment="fixed">
+    <md-tabs class="md-transparent form-tabs">
       <md-tab
         id="tab-target-students"
-        md-label="Your Students"
+        md-label="Bio"
         @click.prevent="navigateTo(1)"
         :class="activeComponentClass(1)"
         exact
       ></md-tab>
       <md-tab
         id="tab-home"
-        md-label="Course Page"
+        md-label="Course"
         @click.prevent="navigateTo(2)"
         :class="activeComponentClass(2)"
         exact
@@ -41,10 +39,16 @@
         exact
       ></md-tab>
     </md-tabs>
-    <div>
-      <keep-alive>
-        <component @courseValueUpdated="handleCourseUpdate" :is="activeComponent" :course="course" />
-      </keep-alive>
+    <div class="form__wrapper">
+      <div class="form__wrapper--inner">
+        <keep-alive>
+          <component
+            @courseValueUpdated="handleCourseUpdate"
+            :is="activeComponent"
+            :course="course"
+          />
+        </keep-alive>
+      </div>
     </div>
   </div>
 </template>

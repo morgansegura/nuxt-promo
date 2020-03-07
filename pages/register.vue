@@ -16,7 +16,7 @@
         <md-card-content>
           <!-- Username Field -->
 
-          <md-field :class="getValidationClass('username')" class="md-with-bg-dark">
+          <md-field :class="getValidationClass('username')" class="md-with-bg-light">
             <label>Create a username</label>
             <md-input
               v-model="form.username"
@@ -37,7 +37,7 @@
 
           <!-- Name Field -->
 
-          <md-field :class="getValidationClass('name')" class="md-with-bg-dark">
+          <md-field :class="getValidationClass('name')" class="md-with-bg-light">
             <label>Your Name</label>
             <md-input
               v-model="form.name"
@@ -58,7 +58,7 @@
 
           <!-- Email Field -->
 
-          <md-field :class="getValidationClass('email')" class="md-with-bg-dark">
+          <md-field :class="getValidationClass('email')" class="md-with-bg-light">
             <label>Your Email</label>
             <md-input
               v-model="form.email"
@@ -76,7 +76,7 @@
 
           <!-- Avatar Field -->
 
-          <md-field :class="getValidationClass('avatar')" class="md-with-bg-dark">
+          <md-field :class="getValidationClass('avatar')" class="md-with-bg-light">
             <label>Your Avatar Image</label>
             <md-input
               v-model="form.avatar"
@@ -96,7 +96,7 @@
 
           <!-- Password Field -->
 
-          <md-field :class="getValidationClass('password')" class="md-with-bg-dark">
+          <md-field :class="getValidationClass('password')" class="md-with-bg-light">
             <label>Your Password</label>
             <md-input
               v-model="form.password"
@@ -117,7 +117,7 @@
 
           <!-- Confirm Password Field -->
 
-          <md-field :class="getValidationClass('passwordConfirmation')" class="md-with-bg-dark">
+          <md-field :class="getValidationClass('passwordConfirmation')" class="md-with-bg-light">
             <label>Re-enter Your Password</label>
             <md-input
               v-model="form.passwordConfirmation"

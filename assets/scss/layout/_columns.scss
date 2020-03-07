@@ -1,8 +1,5 @@
 /** Flex Columns */
 
-$gap: 0.5rem;
-$colCount: 11;
-
 .flex-grid {
     display: flex;
     width: 100%;
@@ -47,17 +44,6 @@ $colCount: 11;
             overflow: hidden;
         }
     }
-}
-
-.col-12,
-.col-12-xs,
-.col-12-sm,
-.col-12-md,
-.col-12-lg,
-.col-12-xl {
-    width: 100%;
-    flex-basis: 100%;
-    flex: 1;
 }
 
 @for $i from 1 through $colCount {
@@ -109,4 +95,15 @@ $colCount: 11;
         }
     }
 
+}
+
+.col-12,
+.col-12-xs,
+.col-12-sm,
+.col-12-md,
+.col-12-lg,
+.col-12-xl {
+    width: 100%;
+    flex-basis: 100%;
+    flex: 1;
 }

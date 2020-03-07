@@ -1,60 +1,41 @@
-/**
-Devices
- */
+/* Device Mixins */
 
-$mobile: 0;
-$mobileL: 26.5625em;
-$tablet: 48em;
-$laptop: 64em;
-$desktop: 90em;
-$desktopL: 90.0625em;
-
-/**
-Device Mixins
- */
-
-/* Tiny Devices (0px) */
-
+// Tiny Devices (0px)
 @mixin mobile {
     @media only screen and (min-width: #{$mobile}) {
         @content;
     }
 }
 
-/* Mobile Large (425px) */
-
+// Mobile Large (425px)
 @mixin mobileL {
     @media only screen and (min-width: #{$mobileL}) {
         @content;
     }
 }
 
-/* Tablet (768px) */
-
+// Tablet (768px)
 @mixin tablet {
     @media only screen and (min-width: #{$tablet}) {
         @content;
     }
 }
 
-/* Laptop (1024px) */
-
+// Laptop (1024px)
 @mixin laptop {
     @media only screen and (min-width: #{$laptop}) {
         @content;
     }
 }
 
-/* Desktop & Laptop Large (1440px) */
-
+// Desktop & Laptop Large (1440px)
 @mixin desktop {
     @media only screen and (min-width: #{$desktop}) {
         @content;
     }
 }
 
-/* Desktop Large (gt 1440px) */
-
+// Desktop Large (gt 1440px)
 @mixin desktopL {
     @media only screen and (min-width: #{$desktopL}) {
         @content;

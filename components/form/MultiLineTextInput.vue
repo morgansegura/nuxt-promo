@@ -1,6 +1,6 @@
 <template>
-  <div class="pl-md">
-    <p class="md-title">{{label}}</p>
+  <div class="multi-line-text-input">
+    <p class="display-title">{{label}}</p>
     <div v-for="(line, index) in lines" :key="line.index" class="multi-field field">
       <div class="control multi-control">
         <div class="multi-input-container">
@@ -12,13 +12,12 @@
               class="multi-input"
               type="text"
             ></md-input>
-            <input type="text" hidden style="display:none;" />
           </md-field>
         </div>
         <div class="btn-container mt-sm">
           <!-- Delete the line -->
           <md-button
-            class="md-icon-button ml-auto"
+            class="md-icon-button ml-auto md-primary"
             @click.prevent="emitRemove(index)"
             type="button"
           >
@@ -29,7 +28,7 @@
     </div>
 
     <!-- Add the Line -->
-    <div class="mb-lg t-right pr-lg mr-sm">
+    <div class="ml-n-sm">
       <md-button @click="emitAdd" type="button" class="md-raised md-primary">Add an answer</md-button>
     </div>
   </div>
@@ -79,27 +78,3 @@ export default {
   }
 };
 </script>
-<style scoped lang="scss">
-/* .multi-input {
-  float: left;
-  width: 100%;
-} */
-/* .multi-button {
-  height: inherit;
-} */
-.multi-input-container {
-  display: flex;
-  flex: 1;
-}
-.btn-container button {
-  display: flex;
-  opacity: 0.3;
-
-  &:hover {
-    opacity: 1;
-  }
-}
-.multi-control {
-  display: flex;
-}
-</style>

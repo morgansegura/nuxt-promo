@@ -6,7 +6,7 @@
         <div class="container">
           <p class="title">{{title}}</p>
           <p class="subtitle">{{subtitle}}</p>
-          <md-button target="_" :href="promoLink" class="md-button md-raised md-primary">Learn More!</md-button>
+          <md-button target="_" :href="promoLink" class="md-button md-raised md-accent">Learn More!</md-button>
         </div>
       </div>
     </div>

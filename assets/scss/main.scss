@@ -1,30 +1,30 @@
 @import url('//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Material+Icons');
 
 /* Setup initial defaults */
-@import '~vue-material/dist/theme/engine';
+// @import '~vue-material/dist/theme/engine';
 
-$primary: md-get-palette-color(indigo, A200);
-$accent: md-get-palette-color(cyan, A400);
-$success: md-get-palette-color(green, A400);
-$info: md-get-palette-color(lightblue, A400);
-$warning: md-get-palette-color(amber, A400);
-$danger: md-get-palette-color(deeporange, A400);
-$textDark: rgba(black, 0.87);
+// $primary: md-get-palette-color(indigo, 500);
+// $accent: md-get-palette-color(amber, 400);
+// $success: md-get-palette-color(green, A400);
+// $info: md-get-palette-color(lightblue, A400);
+// $warning: md-get-palette-color(amber, A400);
+// $danger: md-get-palette-color(deeporange, A400);
+// $textDark: rgba(black, 0.87);
 
 
 
-// Primary and secondary colors
-@include md-register-theme('default',
-    (primary: $primary,
-        accent: $accent,
-        success: $success,
-        info: $info,
-        warning: $warning,
-        danger: $danger,
-        theme: 'light',
-    ));
+// // Primary and secondary colors
+// @include md-register-theme('default',
+//     (primary: $primary,
+//         accent: $accent,
+//         success: $success,
+//         info: $info,
+//         warning: $warning,
+//         danger: $danger,
+//         theme: 'light',
+//     ));
 
-@import "~vue-material/dist/theme/all";
+// @import "~vue-material/dist/theme/all";
 
 .app {
     &__container {
@@ -40,11 +40,36 @@ $textDark: rgba(black, 0.87);
 
 
 
-// Theme device styles [device, content, container, spacing]
-@import './layout';
-// Theme button styles [raised, outline, color]
-@import './button';
-// Theme form styles [inputs]
-@import './form';
-// Theme form styles [inputs]
-@import './components';
+// Abstracts
+@import './abstracts/variables';
+@import './abstracts/functions';
+@import './abstracts/mixins';
+@import './abstracts/placeholders';
+@import './abstracts/utilities';
+
+// Base
+@import './base/reset';
+@import './base/typography';
+
+// Components
+@import './components/buttons';
+@import './components/card';
+@import './components/footer';
+@import './components/header';
+@import './components/hero';
+@import './components/lists';
+@import './components/logo';
+@import './components/menu';
+
+// Layout
+@import './layout/columns';
+@import './layout/content';
+@import './layout/flexbox';
+@import './layout/forms';
+@import './layout/grid';
+@import './layout/navigation';
+@import './layout/spacing';
+
+// Pages [empty]
+
+// Vendors [empty]

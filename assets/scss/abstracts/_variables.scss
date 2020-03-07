@@ -1,0 +1,46 @@
+/* [Device Widths] 
+All sizes are min-width
+mobile: 0, mobileL: 425px, tablet: 768px, 
+laptop: 1024px, desktop: 1200px, desktopL: 1440px 
+*/
+$mobile: 0;
+$mobileL: 26.5625em;
+$tablet: 48em;
+$laptop: 64em;
+$desktop: 75em;
+$desktopL: 90em;
+
+/* [Flex Columns] */
+$gap: 0.5rem; // Gap between columns
+$colCount: 11; // Column Count
+
+/* [CSS Grid] 
+All variables represent the 
+max amount of grids to create, use sparinglly!
+*/
+$colGap: 8;
+$rowGap: 8;
+$cols: 12;
+$rows: 12;
+
+/* 
+[Spacing]: 
+xxs: 0, xxs: 2px, xs: 4px, sm: 8px, 
+md: 16px, lg: 32px, xl: 64px 
+*/
+$sizes: ('0': 0,
+    'xxs': 0.125rem,
+    'xs': 0.25rem,
+    'sm': 0.5rem,
+    'md': 1rem,
+    'lg': 2rem,
+    'xl': 4rem,
+    'xxl': 8rem,
+);
+
+/* [Colors] */
+// Material Colors
+// Colors: 50, 100 - 900, A1, A2, A4, A7
+// Brown, Blue Gray & Gray: 50, 100 - 900
+// Useage: material-color('blue-grey', '600')
+@import '../base/colors/material'
