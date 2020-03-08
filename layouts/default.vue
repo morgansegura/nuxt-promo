@@ -2,9 +2,7 @@
   <div class="app__container">
     <!-- Header/Toolbar -->
     <md-toolbar md-waterfall md-mode="fixed" md-elevation="0">
-      <a href="/">
-        <h3 class="md-title">Site Name</h3>
-      </a>
+      <site-logo />
       <!-- <header-logo /> -->
       <navbar />
     </md-toolbar>
@@ -24,6 +22,7 @@
 <script>
 import Navbar from "~/components/shared/Navbar";
 import FooterMain from "~/components/shared/FooterMain";
+import SiteLogo from "~/components/Logo";
 
 export default {
   data: () => ({

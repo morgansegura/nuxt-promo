@@ -1,0 +1,49 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-size: $fs-xxl;
+    line-height: ($fs-xxl*1.5);
+}
+
+h2 {
+    font-size: $fs-xl;
+    line-height: ($fs-xl*1.5);
+}
+
+h3 {
+    font-size: $fs-lg;
+    line-height: ($fs-lg*1.5);
+}
+
+h4 {
+    font-size: $fs-md;
+    line-height: ($fs-md*1.5);
+}
+
+h5,
+h6,
+p,
+i {
+    font-size: $fs-rg;
+    line-height: ($fs-rg*1.5);
+}
+
+i {
+    font-style: italic;
+}
+
+small {
+    font-size: $fs-xs;
+    line-height: ($fs-xs*1.5);
+}
+
+@each $id,
+$size in $fs {
+    .fs {
+        &-#{$id} {
+            font-size: $size;
+        }
+    }
+}

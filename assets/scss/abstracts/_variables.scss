@@ -39,8 +39,42 @@ $sizes: ('0': 0,
 );
 
 /* [Colors] */
-// Material Colors
-// Colors: 50, 100 - 900, A1, A2, A4, A7
-// Brown, Blue Gray & Gray: 50, 100 - 900
-// Useage: material-color('blue-grey', '600')
-@import '../base/colors/material'
+/* 
+Material Colors
+Colors: 
+[red, pink, purple, deep-purple, indigo, blue, light-blue, cyan, teal, greem light-green, lime, yellow, amber, orange, deep-orange, ]
+[50, 100 - 900, a100, a200, a400, a700]
+[Brown, Blue Gray & Gray] 50, 100 - 900
+Useage: material-color('blue-grey', '600') 
+*/
+@import '../base/colors/material';
+
+$primary: material-color('indigo', '500');
+$accent: material-color('amber', '400');
+$success: material-color('green', 'a400');
+$info: material-color('teal', 'a400');
+$warning: material-color('amber', 'a400');
+$danger: material-color('deep-orange', 'a400');
+
+/* 
+[Font Sizes]: 
+xxs: 12px, xs: 14px, sm: 16px, rg: 18px,md: 24px, lg: 32px, xl: 48px, xxl: 64px 
+*/
+$fs-xxs: 0.75rem;
+$fs-xs: 0.875rem;
+$fs-sm: 1rem;
+$fs-rg: 1.125rem;
+$fs-md: 1.5rem;
+$fs-lg: 2rem;
+$fs-xl: 3rem;
+$fs-xxl: 4rem;
+
+$fs: ('xxs': $fs-xxs,
+    'xs': $fs-xs,
+    'sm': $fs-sm,
+    'rg': $fs-rg,
+    'md': $fs-md,
+    'lg': $fs-lg,
+    'xl': $fs-xl,
+    'xxl': $fs-xxl,
+);

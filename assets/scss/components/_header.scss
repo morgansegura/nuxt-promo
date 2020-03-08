@@ -1,6 +1,14 @@
 /* Header */
 
 /* Header Bar */
-.header__bar {
+.header {
     display: flex;
+
+    &__left {
+        flex-basis: 50%;
+    }
+
+    &__right {
+        flex-basis: 50%;
+    }
 }

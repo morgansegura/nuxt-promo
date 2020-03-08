@@ -1,39 +1,9 @@
 .site-logo {
-    text-transform: uppercase;
-    z-index: 3;
-    font-size: 1.125rem;
 
-    /* font-family: ${font.headline.family}; */
-    & .md-theme-default a:not(.md-button),
-    & a {
-        position: relative;
-        text-decoration: none;
-
-        & i {
-            position: absolute;
-            z-index: 2;
-            top: -5px;
-            padding: 0.25rem 0.35rem;
-            border-radius: 3px;
-            font-style: inherit;
-            font-size: 1rem;
-            font-weight: 700;
-            color: md-get-palette-color(pink, A400);
-            background-color: white;
-        }
-
-        & span {
-            position: relative;
-            left: 35px;
-            top: 0;
-            z-index: 1;
-            padding: 0.45rem 0.5rem 0.45rem 1.5rem;
-            border-radius: 4px;
-            font-size: 1.2rem;
-            font-weight: 900;
-            color: white;
-            background-color: md-get-palette-color(pink, A400);
-            ;
-        }
+    & svg {
+        background-image: url('../../assets/images/codeboom.svg');
+        width: 100px;
+        height: 50px;
+        max-width: 100px;
     }
 }
