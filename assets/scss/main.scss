@@ -12,11 +12,10 @@
 // $textDark: rgba(black, 0.87);
 
 
-
 // // Primary and secondary colors
 // @include md-register-theme('default',
-//     (primary: $primary,
-//         accent: $accent,
+//     (primary: md-get-palette-color(amber, 500),
+//         accent: md-get-palette-color(teal, 400),
 //         success: $success,
 //         info: $info,
 //         warning: $warning,
@@ -26,18 +25,18 @@
 
 // @import "~vue-material/dist/theme/all";
 
-.app {
-    &__container {
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-    }
 
-    &__content {
-        flex: 1;
-    }
-}
+// .app {
+//     &__container {
+//         display: flex;
+//         flex-direction: column;
+//         height: 100vh;
+//     }
 
+//     &__content {
+//         flex: 1;
+//     }
+// }
 
 
 // Abstracts
@@ -70,6 +69,7 @@
 @import './layout/grid';
 @import './layout/navigation';
 @import './layout/spacing';
+@import './layout/table';
 
 // Pages [empty]
 

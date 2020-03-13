@@ -1,43 +1,36 @@
 /* Device Mixins */
 
-// Tiny Devices (0px)
+// Tiny Devices (0px >= 360px)
 @mixin mobile {
-    @media only screen and (min-width: #{$mobile}) {
+    @media only screen and (min-width: $xs) and (max-width: $sm) {
         @content;
     }
 }
 
-// Mobile Large (425px)
-@mixin mobileL {
-    @media only screen and (min-width: #{$mobileL}) {
-        @content;
-    }
-}
-
-// Tablet (768px)
+// Tablet (360px >= 600px)
 @mixin tablet {
-    @media only screen and (min-width: #{$tablet}) {
+    @media only screen and (min-width: $sm) and (max-width: $md) {
         @content;
     }
 }
 
-// Laptop (1024px)
+// Laptop (600px >= 840px)
 @mixin laptop {
-    @media only screen and (min-width: #{$laptop}) {
+    @media only screen and (min-width: $md) and (max-width: $lg) {
         @content;
     }
 }
 
-// Desktop & Laptop Large (1440px)
+// Desktop & Laptop Large (840px >= 1280px)
 @mixin desktop {
-    @media only screen and (min-width: #{$desktop}) {
+    @media only screen and (min-width: $lg) and (max-width: $xl) {
         @content;
     }
 }
 
-// Desktop Large (gt 1440px)
+// Large Screen (gt 1920px)
 @mixin desktopL {
-    @media only screen and (min-width: #{$desktopL}) {
+    @media only screen and (min-width: $xl) {
         @content;
     }
 }

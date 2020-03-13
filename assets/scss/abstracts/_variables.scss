@@ -3,39 +3,24 @@ All sizes are min-width
 mobile: 0, mobileL: 425px, tablet: 768px, 
 laptop: 1024px, desktop: 1200px, desktopL: 1440px 
 */
-$mobile: 0;
-$mobileL: 26.5625em;
-$tablet: 48em;
-$laptop: 64em;
-$desktop: 75em;
-$desktopL: 90em;
+// $xs: 0;
+$xs: 0;
+$sm: 360px;
+$md: 600px;
+$lg: 840px;
+$xl: 1280px;
+$xxl: 1920px;
 
-/* [Flex Columns] */
-$gap: 0.5rem; // Gap between columns
-$colCount: 11; // Column Count
-
-/* [CSS Grid] 
-All variables represent the 
-max amount of grids to create, use sparinglly!
-*/
-$colGap: 8;
-$rowGap: 8;
-$cols: 12;
-$rows: 12;
-
-/* 
-[Spacing]: 
-xxs: 0, xxs: 2px, xs: 4px, sm: 8px, 
-md: 16px, lg: 32px, xl: 64px 
-*/
+/* [Spacing]: */
 $sizes: ('0': 0,
-    'xxs': 0.125rem,
-    'xs': 0.25rem,
+    // 'xxs': 0.125rem,
+    // 'xs': 0.25rem,
     'sm': 0.5rem,
-    'md': 1rem,
+    'rg': 1rem,
+    'md': 1.5rem,
     'lg': 2rem,
-    'xl': 4rem,
-    'xxl': 8rem,
+    // 'xl': 3rem,
+    // 'xxl': 4rem,
 );
 
 /* [Colors] */

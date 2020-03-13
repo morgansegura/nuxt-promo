@@ -1,23 +1,22 @@
 <template>
-  <div class="app__container">
-    <!-- Header/Toolbar -->
-    <md-toolbar md-waterfall md-mode="fixed" md-elevation="0">
+  <v-app class="app__container">
+    <v-navigation-drawer app>NAv Drawer</v-navigation-drawer>
+    <v-app-bar app>
       <site-logo />
       <!-- <header-logo /> -->
       <navbar />
-    </md-toolbar>
+    </v-app-bar>
+    <v-content>
+      <!-- Provides the application the proper gutter -->
+      <v-container fluid>
+        <nuxt />
+      </v-container>
+    </v-content>
 
-    <!-- Content Section -->
-    <main class="app__content">
-      <nuxt />
-    </main>
-
-    <!-- Toolbar/Footer -->
-    <md-divider></md-divider>
-    <md-toolbar md-elevation="0">
-      <footer-main />
-    </md-toolbar>
-  </div>
+    <v-footer app>
+      <!-- -->
+    </v-footer>
+  </v-app>
 </template>
 <script>
 import Navbar from "~/components/shared/Navbar";

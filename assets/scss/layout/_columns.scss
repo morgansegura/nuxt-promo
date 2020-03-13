@@ -1,109 +1,109 @@
-/** Flex Columns */
+// /** Flex Columns */
 
-.flex-grid {
-    display: flex;
-    width: 100%;
-    overflow: hidden;
+// .flex-grid {
+//     display: flex;
+//     width: 100%;
+//     overflow: hidden;
 
-    @include mobile {
-        &-xs {
-            display: flex;
-            width: 100%;
-            overflow: hidden;
-        }
-    }
+//     @include mobile {
+//         &-xs {
+//             display: flex;
+//             width: 100%;
+//             overflow: hidden;
+//         }
+//     }
 
-    @include mobileL {
-        &-sm {
-            display: flex;
-            width: 100%;
-            overflow: hidden;
-        }
-    }
+//     @include mobileL {
+//         &-sm {
+//             display: flex;
+//             width: 100%;
+//             overflow: hidden;
+//         }
+//     }
 
-    @include tablet {
-        &-md {
-            display: flex;
-            width: 100%;
-            overflow: hidden;
-        }
-    }
+//     @include tablet {
+//         &-md {
+//             display: flex;
+//             width: 100%;
+//             overflow: hidden;
+//         }
+//     }
 
-    @include laptop {
-        &-lg {
-            display: flex;
-            width: 100%;
-            overflow: hidden;
-        }
-    }
+//     @include laptop {
+//         &-lg {
+//             display: flex;
+//             width: 100%;
+//             overflow: hidden;
+//         }
+//     }
 
-    @include desktop {
-        &-xl {
-            display: flex;
-            width: 100%;
-            overflow: hidden;
-        }
-    }
-}
+//     @include desktop {
+//         &-xl {
+//             display: flex;
+//             width: 100%;
+//             overflow: hidden;
+//         }
+//     }
+// }
 
-@for $i from 1 through $colCount {
-    $formula: calc((#{$i}/#{$colCount})*100%);
+// @for $i from 1 through $colCount {
+//     $formula: calc((#{$i}/#{$colCount})*100%);
 
-    .col-#{$i} {
-        width: #{$formula};
-        margin-left: $gap;
-        margin-right: $gap;
+//     .col-#{$i} {
+//         width: #{$formula};
+//         margin-left: $gap;
+//         margin-right: $gap;
 
-        @include mobile {
-            &-xs {
-                width: #{$formula};
-                margin-left: $gap;
-                margin-right: $gap;
-            }
-        }
+//         @include mobile {
+//             &-xs {
+//                 width: #{$formula};
+//                 margin-left: $gap;
+//                 margin-right: $gap;
+//             }
+//         }
 
-        @include mobileL {
-            &-sm {
-                width: #{$formula};
-                margin-left: $gap;
-                margin-right: $gap;
-            }
-        }
+//         @include mobileL {
+//             &-sm {
+//                 width: #{$formula};
+//                 margin-left: $gap;
+//                 margin-right: $gap;
+//             }
+//         }
 
-        @include tablet {
-            &-md {
-                width: #{$formula};
-                margin-left: $gap;
-                margin-right: $gap;
-            }
-        }
+//         @include tablet {
+//             &-md {
+//                 width: #{$formula};
+//                 margin-left: $gap;
+//                 margin-right: $gap;
+//             }
+//         }
 
-        @include laptop {
-            &-lg {
-                width: #{$formula};
-                margin-left: $gap;
-                margin-right: $gap;
-            }
-        }
+//         @include laptop {
+//             &-lg {
+//                 width: #{$formula};
+//                 margin-left: $gap;
+//                 margin-right: $gap;
+//             }
+//         }
 
-        @include desktop {
-            &-xl {
-                width: #{$formula};
-                margin-left: $gap;
-                margin-right: $gap;
-            }
-        }
-    }
+//         @include desktop {
+//             &-xl {
+//                 width: #{$formula};
+//                 margin-left: $gap;
+//                 margin-right: $gap;
+//             }
+//         }
+//     }
 
-}
+// }
 
-.col-12,
-.col-12-xs,
-.col-12-sm,
-.col-12-md,
-.col-12-lg,
-.col-12-xl {
-    width: 100%;
-    flex-basis: 100%;
-    flex: 1;
-}
+// .col-12,
+// .col-12-xs,
+// .col-12-sm,
+// .col-12-md,
+// .col-12-lg,
+// .col-12-xl {
+//     width: 100%;
+//     flex-basis: 100%;
+//     flex: 1;
+// }

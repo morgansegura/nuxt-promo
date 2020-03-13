@@ -1,12 +1,70 @@
 <template>
   <div id="Home">
     <hero />
-    <div class="container">
+
+    <table class="table container container-sm">
+      <tbody>
+        <tr>
+          <td colspan="1" rowspan="1">
+            <p>Platform</p>
+          </td>
+          <td colspan="1" rowspan="1">
+            <p>Status</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1" rowspan="1">
+            <p>Android</p>
+          </td>
+          <td colspan="1" rowspan="1">
+            <p>Planned</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1" rowspan="1">
+            <p>iOS</p>
+          </td>
+          <td colspan="1" rowspan="1">
+            <p>Planned</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1" rowspan="1">
+            <p>Web</p>
+          </td>
+          <td colspan="1" rowspan="1">
+            <p>
+              <a
+                href="https://material.io/develop/web/components/data-tables/"
+                rel="noopener"
+                target="_blank"
+              >Available</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1" rowspan="1">
+            <p>Flutter</p>
+          </td>
+          <td colspan="1" rowspan="1">
+            <p>
+              <a
+                href="https://api.flutter.dev/flutter/material/DataTable-class.html"
+                rel="noopener"
+                target="_blank"
+              >Available</a>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- <div class="container">
       <div class="md-layout-item md-size-80 md-small-size-100">
         <h1 class="title">Featured Courses</h1>
         <div class="columns is-multiline">
           <div v-for="course in courses" :key="course._id" class="column is-one-quarter">
-            <!-- <v-popover offset="16" trigger="hover" placement="right-start">
+            <v-popover offset="16" trigger="hover" placement="right-start">
               <course-card :course="course" />
               <template slot="popover">
                 <course-card-tooltip
@@ -16,12 +74,12 @@
                   :wsl="course.wsl"
                 />
               </template>
-            </v-popover>-->
+            </v-popover>
             <blog-card :course="course" />
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
     <!-- <hero
       :title="courseHero.title"
       :subtitle="courseHero.subtitle"

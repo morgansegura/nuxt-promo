@@ -54,6 +54,7 @@ module.exports = {
     plugins: [
         { src: '~/plugins/filters' },
         { src: '~/plugins/vuelidate' },
+        // { src: '~/plugins/material' },
         { src: '~/plugins/toasted', ssr: false },
         { src: '~/plugins/prism', ssr: false },
 
@@ -97,6 +98,10 @@ module.exports = {
             }
         }
     },
+    buildModules: [
+        // With options
+        ['@nuxtjs/vuetify', { /* module options */ }]
+    ],
     loader: 'sass-loader',
     options: {
         importer: materialImporter

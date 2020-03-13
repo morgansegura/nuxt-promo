@@ -1,10 +1,13 @@
 <template>
-  <header class="header py-md bg-red">
+  <header class="header">
     <div class="header__left">
-      <site-logo />
+      <md-button class="md-icon-button">
+        <md-icon>menu</md-icon>
+      </md-button>
+      <!-- <site-logo /> -->
     </div>
     <div class="header__right d-flex justify-fe">
-      <nuxt-link class="bg-blue-grey-200 p-sm" to="/">Link1</nuxt-link>
+      <nuxt-link to="/">Link1</nuxt-link>
       <nuxt-link to="/">Link2</nuxt-link>
     </div>
   </header>
