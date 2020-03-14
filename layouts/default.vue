@@ -1,10 +1,25 @@
 <template>
   <v-app class="app__container">
-    <v-navigation-drawer app>NAv Drawer</v-navigation-drawer>
-    <v-app-bar app>
+    <v-navigation-drawer v-model="drawer" app>
+      <v-container>Nav Drawer</v-container>
+    </v-navigation-drawer>
+    <v-app-bar absolute color="amber" elevate-on-scroll app>
       <site-logo />
       <!-- <header-logo /> -->
-      <navbar />
+      <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
+      <v-spacer></v-spacer>
+
+      <v-btn icon>
+        <v-icon>mdi-magnify</v-icon>
+      </v-btn>
+
+      <v-btn icon>
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+
+      <v-btn icon>
+        <v-icon>mdi-dots-vertical</v-icon>
+      </v-btn>
     </v-app-bar>
     <v-content>
       <!-- Provides the application the proper gutter -->

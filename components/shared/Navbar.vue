@@ -1,10 +1,7 @@
 <template>
   <header class="header">
     <div class="header__left">
-      <md-button class="md-icon-button">
-        <md-icon>menu</md-icon>
-      </md-button>
-      <!-- <site-logo /> -->
+      <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
     </div>
     <div class="header__right d-flex justify-fe">
       <nuxt-link to="/">Link1</nuxt-link>
@@ -18,7 +15,7 @@ import { mapGetters } from "vuex";
 export default {
   data() {
     return {
-      isActive: false
+      drawer: false
     };
   },
   computed: {
